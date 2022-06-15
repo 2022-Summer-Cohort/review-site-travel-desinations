@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/layout.css">
+    <title>Destination Reviews</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Travel Destinations Reviews</h1>
+            <nav>
+                <ul>
+                    <li>Categories</li>
+                    <li>Hashtags</li>
+                </ul>
+            </nav>
+    </div>
+    </header>
+    <main>
+        <section>
+            <h1>Name of Destination</h1>
+            <a href="#">Picture of Destination</a>
+            <p>Description</p>
+            <div>
+                <h3>rating
+                    <img src="#" alt="#">
+                </h3>
+            </div>
+            <div class="comment-form">
+                <form action="../add-comment/" method="POST">
+
+                    <label for="comment">Enter a new comment:</label>
+                    <input type="text" id="comment" name="userComment" placeholder="Comment here...">
+                    <input type="hidden" value="Die Hard" name="title" />
+
+                    <br>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <article>
+            2022
+        </article>
+        <article>
+            Travel Destination Reviews
+        </article>
+    </footer>
+</body>
+
+</html>
