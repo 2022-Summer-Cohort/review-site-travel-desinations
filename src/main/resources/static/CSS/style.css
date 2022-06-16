@@ -1,0 +1,35 @@
+*{
+    list-style: none;
+    
+}
+.container{
+    background-image:url(/src/main/resources/static/Images/annie-spratt-qyAka7W5uMY-unsplash.jpg);
+    color: lightblue;
+    text-shadow: 2px 2px 4px black;
+}
+#beach{
+  
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
+#mountains{
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
+#city{
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
+#international{
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
+#cruise{
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
