@@ -3,7 +3,8 @@
     
 }
 .container{
-    background-image:url(/src/main/resources/static/Images/annie-spratt-qyAka7W5uMY-unsplash.jpg);
+    background-image:url(/src/main/resources/static/images/annie-spratt-qyAka7W5uMY-unsplash\ \(2\).jpg);
+    background-size: cover;
     color: lightblue;
     text-shadow: 2px 2px 4px black;
 }
