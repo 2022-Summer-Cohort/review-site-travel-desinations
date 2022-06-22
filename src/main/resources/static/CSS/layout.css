@@ -1,71 +1,11 @@
-
-body{
-    position: relative;
-    min-height: 100vh;
-
-}
-.container{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-    
+*{
+    padding: 0;
+    margin: 0;
     
 }
-h1{
-    font-size: 4em;
-    display: flex;
+#beaches{
+    background-color: ;
 }
-a{
-    color: white;
-    text-decoration: none;
+img{
+    height = 50px;
 }
-nav ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: white;
-    font-size: 1.5em;
-    
-    
-}
-.main-catagories{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: 1fr, .3fr, 1fr, .3fr;   
-    text-align: center;
-    padding-left: 0px;
-    padding-bottom: 2.5rem;
-}
-footer{
-    display: flex;
-    justify-content: center;
-   background-color: lightblue; 
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   height: 2.5rem;
-}
-.copyright{
-    margin-right: 10px;
-}
-.sub-main{
-    text-align: center;
-   
-    
-}
-.sub-main2{
-   text-align: center;
-   padding: 0px;
-   margin-bottom: 40px;
-    }
-#name-of-destination{
-   justify-content: center;
-}
-.comment-form{
-    margin-bottom : 50px;
-}
-#all-reviews-listed{
-    padding: 0px;
-}
-
