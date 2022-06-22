@@ -10,10 +10,14 @@ public class Destination {
     @GeneratedValue
     private long id;
     private String destinationName;
+    private String description;
 
-    public Destination(String destinationName) {
+    public Destination(String destinationName, String description) {
         this.destinationName = destinationName;
+        this.description = description;
     }
+
+
     public Destination(){
 
     }
