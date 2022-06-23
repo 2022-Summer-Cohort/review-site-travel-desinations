@@ -6,47 +6,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/CSS/layout.css">
-    <link rel="stylesheet" href="/src/main/resources/static/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/style.css">
     <title>Destination Reviews</title>
 
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1>Travel Destinations Reviews</h1>
-            <nav>
-                <ul>
-                    <li><a href="categories.html">Categories</a> </li>
-                    <li><a href="hashtags.html">Hashtags</a> </li>
-                </ul>
-            </nav>
-        </header>
+        <div th:replace="fragments.html :: nav"></div>
     </div>
     <main>
         <section class="categories">
             <ul class="main-categories">
+                <li th:each = "category:${categories}">
+                <div>
 
-                <div th:each = "category:${categories}">
-                    <li>
-                        <img id='beach' src="/src/main/resources/static/Images/sean-oulashin-KMn4VEeEPR8-unsplash.jpg"
-                            alt="Beach">
-                        <h2 th:text = ${category.categoryName}>Beaches</h2>
-                    </li>
+                        <a th:href="'/category/' + ${categoryName}"><img class = "category" th:src= "${category.imageURL}"
+                                                                         th:alt="${category.altText}"></a>
+                        <a th:href="'/category/' + ${categoryName}"><h2 th:text = ${category.categoryName}>Beaches</h2></a>
+
                 </div>
-
+                </li>
             </ul>
         </section>
     </main>
-    <footer>
-        <article class="copyright">
-            <p>©2022</p>
-
-        </article>
-        <p>Travel Destination Reviews</p>
-
-    </footer>
+    <div th:replace="fragments.html :: footer"></div>
 </body>
 
 </html>

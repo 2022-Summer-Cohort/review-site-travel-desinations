@@ -10,10 +10,15 @@ public class Category {
     @GeneratedValue
     private long id;
     private String categoryName;
+    private String imageURL;
+    private String altText;
 
-    public Category(String categoryName) {
+    public Category(String categoryName, String imageURL, String altText) {
         this.categoryName = categoryName;
+        this.imageURL = imageURL;
+        this.altText = altText;
     }
+
     public Category(){
 
     }
@@ -23,5 +28,13 @@ public class Category {
 
     public String getCategoryName() {
         return categoryName;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public String getAltText() {
+        return altText;
     }
 }

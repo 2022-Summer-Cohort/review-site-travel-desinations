@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -14,15 +15,7 @@
 
 <body>
     <div class="container">
-        <header class="header">
-            <h1>Travel Destinations Reviews</h1>
-            <nav>
-                <ul>
-                    <li><a href="categories.html">Categories</a> </li>
-                    <li><a href="hashtags.html">Hashtags</a> </li>
-                </ul>
-            </nav>
-        </header>
+        <div th:replace="fragments.html :: nav"></div>
     </div>
     <main class = "sub-main">
         <h2>All Reviews</h2>
@@ -32,14 +25,7 @@
             </ul>
         </section>
     </main>
-    <footer>
-        <article class="copyright">
-            <p>©2022</p>
-            
-        </article>
-        <p>Travel Destination Reviews</p>
-       
-    </footer>
+    <div th:replace="fragments.html :: footer"></div>
 
 </body>
 
