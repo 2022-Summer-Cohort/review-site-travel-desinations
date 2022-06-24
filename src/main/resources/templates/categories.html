@@ -22,9 +22,9 @@
                 <li th:each = "category:${categories}">
                 <div>
 
-                        <a th:href="'/category/' + ${categoryName}"><img class = "category" th:src= "${category.imageURL}"
+                        <a th:href="'/category/' + ${category.categoryName}"><img class = "category" th:src= "${category.imageURL}"
                                                                          th:alt="${category.altText}"></a>
-                        <a th:href="'/category/' + ${categoryName}"><h2 th:text = ${category.categoryName}>Beaches</h2></a>
+                        <a th:href="'/category/' + ${category.categoryName}"><h2 th:text = ${category.categoryName}>Beaches</h2></a>
 
                 </div>
                 </li>

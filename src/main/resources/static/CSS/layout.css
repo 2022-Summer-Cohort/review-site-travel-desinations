@@ -8,9 +8,7 @@ body{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    
-    
-    
+
 }
 h1{
     font-size: 4em;
@@ -68,4 +66,29 @@ footer{
 }
 #all-reviews-listed{
     padding: 0px;
+}
+
+.category{
+    margin: auto;
+    width: 80%
+}
+.category h2{
+text-align: center;
+font-size: 50px;
+}
+
+.main-category {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 1fr, .3fr, 1fr, .3fr;
+    text-align: center;
+    padding-left: 0px;
+    padding-bottom: 2.5rem;
+}
+
+.main-category img{
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
 }
