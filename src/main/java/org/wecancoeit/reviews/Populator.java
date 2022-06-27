@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.wecancoeit.reviews.Model.Category;
 import org.wecancoeit.reviews.Model.Destination;
 import org.wecancoeit.reviews.Model.Hashtag;
+import org.wecancoeit.reviews.Model.Review;
 import org.wecancoeit.reviews.Repos.CategoryRepository;
 import org.wecancoeit.reviews.Repos.DestinationRepository;
 import org.wecancoeit.reviews.Repos.HashtagRepository;
@@ -118,5 +119,7 @@ public class Populator implements CommandLineRunner {
         Destination royalCaribbean = new Destination("Royal Caribbean Cruise Line","/images/royal.jpeg","Royal Caribbean Cruise Ship", "Royal Caribbean has something for everyone with top-rated itineraries and destinations around the world.", royalCategories, royalHashtags);
         destinationRepo.save(royalCaribbean);
 
+        Review reviewTulum = new Review("Tulum", 100.0, "comment" );
+        reviewRepo.save(reviewTulum);
     }
 }

@@ -13,6 +13,8 @@ public class Review {
     private double rating;
     private String comment;
 
+
+    // TODO take out the string destination, replace with one to many relationship with reviews and destinations
     public Review(String destination, double rating, String comment) {
         this.destination = destination;
         this.rating = rating;

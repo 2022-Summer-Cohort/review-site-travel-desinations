@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/CSS/style.css">
-    <link rel="stylesheet" href="/src/main/resources/static/CSS/layout.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
     <title>Destination Reviews</title>
 
 </head>
@@ -18,9 +18,15 @@
     </header>
     <main>
         <section class ="sub-main">
-            <h1 id="name-of-destination">Name of Destination</h1>
+            <div th:each = "destination:${destinations}">
+            <h1 th:text = ${destination.destinationName}>Name of Destination</h1>
             <a href="#">Picture of Destination</a>
-            <p>Description</p>
+                <img th:src="${destination.imageURL}" th:alt="${destination.altText}">
+                <br>
+                <br>
+            <p th:text = "${destination.description}">Description</p>
+
+<!--                id="name-of-destination"-->
 <!--            <div>-->
 <!--                <h3>rating-->
 <!--                    <img src="#" alt="#">-->
@@ -38,6 +44,7 @@
 <!--                    <input type="submit" value="Submit">-->
 <!--                </form>-->
 <!--            </div>-->
+            </div>
         </section>
     </main>
     <div th:replace="fragments.html :: footer"></div>
