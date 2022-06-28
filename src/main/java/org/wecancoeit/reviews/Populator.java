@@ -58,9 +58,12 @@ public class Populator implements CommandLineRunner {
         Hashtag transportation = new Hashtag("#Transportation");
         hashtagRepo.save(transportation);
 
+        Review reviewTulum = new Review("Tulum", 5, "⭐⭐⭐⭐⭐", "comment" );
+        reviewRepo.save(reviewTulum);
+
         Category[] tulumCategories = {beaches,international};
         Hashtag[] tulumHashtags = {adventurous, goodFood, relaxing};
-        Destination tulum = new Destination("Tulum, Mexico", "/images/tulum.jpeg", "tulum ruins", "Located on the Caribbean coastline of Mexico, Tulum boasts exquisite beaches and well-maintained ruins of an ancient Mayan port city.", tulumCategories, tulumHashtags);
+        Destination tulum = new Destination("Tulum, Mexico", "/images/tulum.jpeg", "tulum ruins", "Located on the Caribbean coastline of Mexico, Tulum boasts exquisite beaches and well-maintained ruins of an ancient Mayan port city.", tulumCategories, tulumHashtags, reviewTulum);
         destinationRepo.save(tulum);
         Category[] destinCategories = {beaches};
         Hashtag[] destinHashtags = {adventurous, goodFood, familyFriendly};
@@ -119,7 +122,6 @@ public class Populator implements CommandLineRunner {
         Destination royalCaribbean = new Destination("Royal Caribbean Cruise Line","/images/royal.jpeg","Royal Caribbean Cruise Ship", "Royal Caribbean has something for everyone with top-rated itineraries and destinations around the world.", royalCategories, royalHashtags);
         destinationRepo.save(royalCaribbean);
 
-        Review reviewTulum = new Review("Tulum", 100.0, "comment" );
-        reviewRepo.save(reviewTulum);
+
     }
 }

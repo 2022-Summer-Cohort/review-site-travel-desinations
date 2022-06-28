@@ -24,7 +24,7 @@
                     <li th:each="destination: ${category.destinations}">
                         <div>
                             
-                            <img th:src="${destination.imageURL}" th:alt="${destination.altText}">
+                            <a th:href="'/destination/' + ${destination.destinationName}"><img th:src="${destination.imageURL}" th:alt="${destination.altText}"></a>
                             <h3 th:text="${destination.destinationName}"></h3>
 
                         </div>
@@ -36,13 +36,6 @@
 
         </section>
 
-
-<!--        <section>-->
-<!--            <ul class="sub-main2">-->
-
-<!--                <li><a th:href=""></a>Destination</li>-->
-<!--            </ul>-->
-<!--        </section>-->
     </main>
     <div th:replace="fragments.html :: footer"></div>
 

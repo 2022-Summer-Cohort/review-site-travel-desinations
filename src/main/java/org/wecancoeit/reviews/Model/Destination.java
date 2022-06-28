@@ -1,9 +1,9 @@
 package org.wecancoeit.reviews.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import org.wecancoeit.reviews.Repos.ReviewRepository;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -20,15 +20,17 @@ public class Destination {
     Collection<Category> categories;
     @ManyToMany
     Collection<Hashtag> hashtags;
+    @ManyToMany
+    Collection<Review> reviews;
 
-
-    public Destination(String destinationName, String imageURL, String altText, String description, Category[] categories, Hashtag[] hashtags) {
+    public Destination(String destinationName, String imageURL, String altText, String description, Category[] categories, Hashtag[] hashtags, Review...reviews) {
         this.destinationName = destinationName;
         this.imageURL = imageURL;
         this.altText = altText;
         this.description = description;
         this.categories = Arrays.asList(categories);
         this.hashtags = Arrays.asList(hashtags);
+        this.reviews = Arrays.asList(reviews);
     }
 
 
@@ -45,6 +47,17 @@ public class Destination {
 
     public String getImageURL() {
         return imageURL;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Collection<Review> getReviews() {
+        return reviews;
+    }
+    public void addReview(Review review){
+        reviews.add(review);
     }
 
     public String getAltText() {

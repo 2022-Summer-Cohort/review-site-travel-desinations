@@ -1,8 +1,8 @@
 package org.wecancoeit.reviews.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Review {
@@ -11,16 +11,24 @@ public class Review {
     private long id;
     private String destination;
     private double rating;
+    private String stars;
     private String comment;
-
+    @ManyToMany(mappedBy = "reviews")
+    private Collection<Destination> destinations;
 
     // TODO take out the string destination, replace with one to many relationship with reviews and destinations
-    public Review(String destination, double rating, String comment) {
+    public Review(String destination, int rating, String stars, String comment) {
+        this.destination = destination;
+        this.rating = rating;
+        this.stars = stars;
+        this.comment = comment;
+        this.destinations = new ArrayList<>();
+    }
+    public Review(String destination, int rating, String comment){
         this.destination = destination;
         this.rating = rating;
         this.comment = comment;
     }
-
     public Review() {
 
     }
@@ -39,5 +47,13 @@ public class Review {
 
     public String getComment() {
         return comment;
+    }
+
+    public String getStars() {
+        return stars;
+    }
+
+    public Collection<Destination> getDestinations() {
+        return destinations;
     }
 }

@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 public interface DestinationRepository extends CrudRepository<Destination, Long> {
-   Destination findByDestinationName(String name);
+   Optional<Destination> findByDestinationName(String destinationName);
 
 
 }

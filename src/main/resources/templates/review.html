@@ -12,42 +12,52 @@
 </head>
 
 <body>
-    <div class="container">
-        <div th:replace="fragments.html :: nav"></div>
-    </div>
-    </header>
-    <main>
-        <section class ="sub-main">
-            <div th:each = "destination:${destinations}">
-            <h1 th:text = ${destination.destinationName}>Name of Destination</h1>
-            <a href="#">Picture of Destination</a>
-                <img th:src="${destination.imageURL}" th:alt="${destination.altText}">
-                <br>
-                <br>
-            <p th:text = "${destination.description}">Description</p>
+<div class="container">
+    <div th:replace="fragments.html :: nav"></div>
+</div>
+</header>
+<main>
+    <section class="destination">
+        <h1 th:text=${destination.destinationName}>Name of Destination</h1>
+                <div>
+                    <img th:src="${destination.imageURL}" th:alt="${destination.altText}">
+                    <br>
+                    <br>
+                    <p th:text="${destination.description}">Description</p>
+                    <br>
+                    <br>
+                    <ul class="average-rating">
+                        <h2>Average Rating:&nbsp;</h2>
+                        <li th:each="review : ${destination.reviews}">
+                            <p th:text="${review.stars}"></p>
+                        </li>
+                    </ul>
+                    <div class="reviewForm">
+                    <form th:action="'/destination/' + ${destination.destinationName} + '/addReview'"  method="post">
+                        <label for="starRating"> Star rating: &nbsp</label>
+                        <input type="number" min="0" max="5" name="rating" id="starRating" value="">
+                        <br>
+                        <br>
+                        <br>
+                        <label for="reviewContent">Review: &nbsp;</label><textarea name="comment" id="reviewContent" cols="30" rows="5"></textarea>
+                        <br>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    </div>
+                    <div class="postedReviews" >
+                        <ul th:each="review: ${destination.reviews}">
+                            <li>
+                                <p th:text="${review.comment}"></p>
 
-<!--                id="name-of-destination"-->
-<!--            <div>-->
-<!--                <h3>rating-->
-<!--                    <img src="#" alt="#">-->
-<!--                </h3>-->
-<!--            </div>-->
-<!--            <div class="comment-form">-->
-<!--                <form action="../add-comment/" method="POST">-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    </section>
 
-<!--                    <label for="comment">Enter a new comment:</label>-->
-<!--                    <input type="text" id="comment" name="userComment" placeholder="Comment here...">-->
-<!--                    <input type="hidden" value="Die Hard" name="title" />-->
-
-<!--                    <br>-->
-
-<!--                    <input type="submit" value="Submit">-->
-<!--                </form>-->
-<!--            </div>-->
-            </div>
-        </section>
-    </main>
-    <div th:replace="fragments.html :: footer"></div>
+</main>
+<div th:replace="fragments.html :: footer"></div>
 </body>
 
 </html>
