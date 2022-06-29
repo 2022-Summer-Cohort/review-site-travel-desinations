@@ -25,7 +25,7 @@
                         <div>
                             
                             <a th:href="'/destination/' + ${destination.destinationName}"><img th:src="${destination.imageURL}" th:alt="${destination.altText}"></a>
-                            <h3 th:text="${destination.destinationName}"></h3>
+                            <a th:href="'/destination/' + ${destination.destinationName}"><h3 th:text="${destination.destinationName}"></h3></a>
 
                         </div>
                     </li>

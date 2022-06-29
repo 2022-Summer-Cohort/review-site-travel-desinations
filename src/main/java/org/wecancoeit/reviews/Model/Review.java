@@ -11,7 +11,7 @@ public class Review {
     private long id;
     private String destination;
     private double rating;
-    private String stars;
+    private String stars = "/f005";
     private String comment;
     @ManyToMany(mappedBy = "reviews")
     private Collection<Destination> destinations;
@@ -20,7 +20,7 @@ public class Review {
     public Review(String destination, int rating, String stars, String comment) {
         this.destination = destination;
         this.rating = rating;
-        this.stars = stars;
+        this.stars = stars.repeat(rating);
         this.comment = comment;
         this.destinations = new ArrayList<>();
     }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
     <title>Destination Reviews</title>
 
 </head>
@@ -26,32 +27,31 @@
                     <p th:text="${destination.description}">Description</p>
                     <br>
                     <br>
-                    <ul class="average-rating">
-                        <h2>Average Rating:&nbsp;</h2>
-                        <li th:each="review : ${destination.reviews}">
-                            <p th:text="${review.stars}"></p>
-                        </li>
-                    </ul>
-                    <div class="reviewForm">
-                    <form th:action="'/destination/' + ${destination.destinationName} + '/addReview'"  method="post">
-                        <label for="starRating"> Star rating: &nbsp</label>
-                        <input type="number" min="0" max="5" name="rating" id="starRating" value="">
-                        <br>
-                        <br>
-                        <br>
-                        <label for="reviewContent">Review: &nbsp;</label><textarea name="comment" id="reviewContent" cols="30" rows="5"></textarea>
-                        <br>
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
+                    <div class="review-heading">
+                        <span th:text="|Here's what people are saying about ${destination.destinationName}...| "></span>
                     </div>
+
                     <div class="postedReviews" >
-                        <ul th:each="review: ${destination.reviews}">
-                            <li>
-                                <p th:text="${review.comment}"></p>
+                        <ul>
+                            <li th:each="review: ${destination.reviews}" class="reviewList">
+                                <p th:text="${review.stars}"></p>
+                                <p th:text="${review.comment}">text</p>
 
                             </li>
                         </ul>
+                    </div>
+                    <div class="reviewForm">
+                        <form th:action="'/destination/' + ${destination.destinationName} + '/addReview'"  method="post">
+                            <br>
+                            <br>
+                            <textarea name="comment" id="reviewContent" cols="30" rows="5" placeholder="Enter review here"></textarea>
+                            <br>
+                            <label for="starRating"> Stars: &nbsp</label>
+                            <input type="number" min="0" max="5" name="rating" id="starRating" value="">
+                            <br>
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
                     </div>
                 </div>
     </section>

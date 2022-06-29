@@ -31,7 +31,8 @@ public class DestinationController {
     @PostMapping("/destination/{destinationName}/addReview")
     private String addReview(@PathVariable String destinationName, @RequestParam int rating, @RequestParam String comment){
         Destination destination1 = destinationRepo.findByDestinationName(destinationName).get();
-        Review review = new Review(destination1.getDestinationName(),rating,comment);
+        String stars = "⭐";
+        Review review = new Review(destination1.getDestinationName(),rating, stars, comment);
         reviewRepo.save(review);
         destination1.addReview(review);
         destinationRepo.save(destination1);
