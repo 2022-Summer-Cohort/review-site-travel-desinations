@@ -20,12 +20,21 @@
         <div th:replace="fragments.html :: nav"></div>
     </div>
     <main>
-        <h2 class="sub-main">Hashtag</h2>
-        <section>
-            <ul class="sub-main2">
-                <li>Destination</li>
-            </ul>
+        <section class="hashtag">
+            <div>
+                <h2 th:text = "'#' + ${hashtag.hashtag}" class="sub-main">Hashtag</h2>
+                <ul class="main-category">
+                    <li th:each = "destination:${hashtag.destinations}">
+                        <div>
+                            <a th:href="'/destination/'+${destination.destinationName}"><img th:src="${destination.imageURL}" th:alt="${destination.altText}"></a>
+                            <a th:href="'/destination/'+${destination.destinationName}"><h3 th:text="${destination.destinationName}"></h3></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
+
+
     </main>
     <div th:replace="fragments.html :: footer"></div>
 

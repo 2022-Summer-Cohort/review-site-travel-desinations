@@ -35,4 +35,5 @@ public class Hashtag {
     public Collection<Destination> getDestinations(){
         return destinations;
     }
+
 }

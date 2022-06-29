@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+     xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -19,12 +19,12 @@
     </div>
 
 
-    <body>
+
         <main class="sub-main">
             <section>
                 <ul>
                     <div th:each="hashtag:${hashtags}">
-                        <a th:href="'/hashtags/' + ${hashtag}"><li th:text=${hashtag.hashtag}>FamilyFriendly
+                        <a th:href="'/hashtags/' + ${hashtag.hashtag}"><li th:text= "'#'+${hashtag.hashtag}">FamilyFriendly
                         </li></a>
                     </div>
                 </ul>

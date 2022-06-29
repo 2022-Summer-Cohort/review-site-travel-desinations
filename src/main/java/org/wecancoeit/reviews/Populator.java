@@ -39,23 +39,23 @@ public class Populator implements CommandLineRunner {
         Category cruise = new Category("Cruise", "/images/josiah-weiss-tthKs4A7XMY-unsplash.jpg", "cruise ship");
         categoryRepo.save(cruise);
 
-        Hashtag familyFriendly = new Hashtag("#FamilyFriendly");
+        Hashtag familyFriendly = new Hashtag("FamilyFriendly");
         hashtagRepo.save(familyFriendly);
-        Hashtag breathtaking = new Hashtag("#Breathtaking");
+        Hashtag breathtaking = new Hashtag("Breathtaking");
         hashtagRepo.save(breathtaking);
-        Hashtag goodFood = new Hashtag("#GoodFood");
+        Hashtag goodFood = new Hashtag("GoodFood");
         hashtagRepo.save(goodFood);
-        Hashtag allInclusive = new Hashtag("#AllInclusive");
+        Hashtag allInclusive = new Hashtag("AllInclusive");
         hashtagRepo.save(allInclusive);
-        Hashtag nightLife = new Hashtag("#NightLife");
+        Hashtag nightLife = new Hashtag("NightLife");
         hashtagRepo.save(nightLife);
-        Hashtag amazing = new Hashtag("#Amazing");
+        Hashtag amazing = new Hashtag("Amazing");
         hashtagRepo.save(amazing);
-        Hashtag relaxing = new Hashtag("#Relaxing");
+        Hashtag relaxing = new Hashtag("Relaxing");
         hashtagRepo.save(relaxing);
-        Hashtag adventurous = new Hashtag("#Adventurous");
+        Hashtag adventurous = new Hashtag("Adventurous");
         hashtagRepo.save(adventurous);
-        Hashtag transportation = new Hashtag("#Transportation");
+        Hashtag transportation = new Hashtag("Transportation");
         hashtagRepo.save(transportation);
 
         Review reviewTulum = new Review("Tulum", 5, "⭐", "comment" );

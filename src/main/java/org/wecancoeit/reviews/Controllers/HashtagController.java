@@ -19,7 +19,7 @@ public class HashtagController {
     }
     @RequestMapping("/hashtags/{hashtag}")
     public String showOneHashtag(Model model, @PathVariable String hashtag){
-        model.addAttribute("hashtag", hashtagRepo.findByHashtag(hashtag));
+        model.addAttribute("hashtag", hashtagRepo.findByHashtagIgnoreCase(hashtag).get());
         return "hashtag";
     }
 }

@@ -69,4 +69,8 @@ public class Destination {
     public Collection<Hashtag> getHashtags(){
         return hashtags;
     }
+
+    public void addHashtag(Hashtag hashtag){
+        hashtags.add(hashtag);
+    }
 }
