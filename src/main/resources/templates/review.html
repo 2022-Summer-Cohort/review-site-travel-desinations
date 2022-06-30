@@ -46,12 +46,16 @@
                             <br>
                             <textarea name="comment" id="reviewContent" cols="30" rows="5" placeholder="Enter review here"></textarea>
                             <br>
-                            <label for="newHashtag">Add Hashtag: #</label>
-                            <input type="text" id="newHashtag" name="hashtag">
-                            <br>
                             <label for="starRating"> Stars: &nbsp</label>
                             <input type="number" min="0" max="5" name="rating" id="starRating" value="1">
                             <br>
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                        <br>
+                        <form th:action="'/destination/' + ${destination.destinationName} + '/addHashtag'" method="post">
+                            <label for="newHashtag">Add Hashtag: #</label>
+                            <input type="text" id="newHashtag" name="hashtag">
                             <br>
                             <input type="submit" value="Submit">
                         </form>

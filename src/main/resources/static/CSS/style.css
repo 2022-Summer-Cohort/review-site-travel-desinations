@@ -19,7 +19,12 @@
     color: white;
 text-shadow: 2px 2px 4px black;
 }
-.sub-main li:hover{
-    color:white;
+.sub-main-hashtag li{
+    font-size: 3em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+.sub-main-hashtag li:hover{
+    color: var(--light-highlight) ;
    
 }

@@ -58,7 +58,7 @@ public class Populator implements CommandLineRunner {
         Hashtag transportation = new Hashtag("Transportation");
         hashtagRepo.save(transportation);
 
-        Review reviewTulum = new Review("Tulum", 5, "⭐", "comment" );
+        Review reviewTulum = new Review("Tulum", 5, "⭐", "Tulum is an incredible place! Can't wait to visit again!" );
         reviewRepo.save(reviewTulum);
         Review reviewDestin = new Review("Destin,Florida",5, "⭐","The beach is busy but the white sand is beautiful!");
         reviewRepo.save(reviewDestin);
@@ -131,7 +131,7 @@ public class Populator implements CommandLineRunner {
         destinationRepo.save(paris);
         Category[] athensCategories = {cities,international};
         Hashtag[] athensHashtags = {adventurous, goodFood, relaxing, breathtaking};
-        Destination athens = new Destination("Athens, Greece", "/images/athens-cityscape.jpg","athens", "As the capital of Greece, Athens has been historically the heart of ancient Greece. Travelers and tourists flock to see the breathtaking Acropolis and the hilltop citadel topped with the Parthenon Temple.", athensCategories, athensHashtags, reviewAthens);
+        Destination athens = new Destination("Athens, Greece", "/images/athens.jpg","athens", "As the capital of Greece, Athens has been historically the heart of ancient Greece. Travelers and tourists flock to see the breathtaking Acropolis and the hilltop citadel topped with the Parthenon Temple.", athensCategories, athensHashtags, reviewAthens);
         destinationRepo.save(athens);
         Category[] phnomCategories = {international};
         Hashtag[] phnomHashtags = {adventurous, goodFood, amazing};

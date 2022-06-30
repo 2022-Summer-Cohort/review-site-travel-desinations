@@ -34,23 +34,32 @@ public class DestinationController {
         return "review";
     }
     @PostMapping("/destination/{destinationName}/addReview")
-    private String addReview(@PathVariable String destinationName, @RequestParam int rating, @RequestParam String comment,@RequestParam String hashtag){
+    private String addReview(@PathVariable String destinationName, @RequestParam int rating, @RequestParam String comment){
         Destination destination1 = destinationRepo.findByDestinationName(destinationName).get();
-        Optional<Hashtag> hashtag1 = hashtagRepo.findByHashtagIgnoreCase(hashtag);
-        if (!hashtag1.isPresent()){
-            Hashtag hashtag2 = new Hashtag(hashtag);
-            hashtagRepo.save(hashtag2);
-            destination1.addHashtag(hashtag2);
-        }
-            String stars = "⭐";
-            Review review = new Review(destination1.getDestinationName(),rating, stars, comment);
-            reviewRepo.save(review);
-            destination1.addReview(review);
-            destinationRepo.save(destination1);
-
+        String stars = "⭐";
+        Review review = new Review(destination1.getDestinationName(),rating, stars, comment);
+        reviewRepo.save(review);
+        destination1.addReview(review);
+        destinationRepo.save(destination1);
 
         return "redirect:/destination/" + destinationName;
     }
+
+    @PostMapping("/destination/{destinationName}/addHashtag")
+    private String addHashtag(@PathVariable String destinationName, @RequestParam String hashtag) {
+        Optional<Hashtag> hashtag1 = hashtagRepo.findByHashtagIgnoreCase(hashtag);
+        if (!hashtag1.isPresent()) {
+            Hashtag hashtag2 = new Hashtag(hashtag);
+            hashtagRepo.save(hashtag2);
+            Destination destination1 = destinationRepo.findByDestinationName(destinationName).get();
+            destination1.addHashtag(hashtag2);
+            destinationRepo.save(destination1);
+        }
+        return "redirect:/destination/" + destinationName;
+    }
+
+
+
 //    @RequestMapping("/destination/{review}")
 //    public String showDestinationReviews(Model model, @PathVariable Review review){
 //        model.addAttribute("review",destinationRepo)
