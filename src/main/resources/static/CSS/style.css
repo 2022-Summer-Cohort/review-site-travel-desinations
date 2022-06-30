@@ -15,10 +15,11 @@
     width: 10rem;
 }
 .sub-main{
-color:black;
-font-size: 2em;
+    font-size: 3em;
+    color: white;
+text-shadow: 2px 2px 4px black;
 }
 .sub-main li:hover{
-    color:lightblue;
-    
+    color:white;
+   
 }

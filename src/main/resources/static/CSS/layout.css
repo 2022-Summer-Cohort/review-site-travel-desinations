@@ -1,14 +1,36 @@
-
+:root{
+    --dark-background: rgb(162, 199, 211);
+    --text: black;
+    --light-highlight: rgba(225, 225, 223, .43);
+    --dark-highlight: rgb(225, 225, 223);
+    --light-background: rgb(173, 216, 230);
+}
+html{
+    background-color: var(--dark-background);
+    height: 100%;
+    min-height: 100%;
+}
 body{
     position: relative;
     min-height: 100vh;
-
+    background-color: var(--light-background);
+    width: 85%;
+    margin: 15px auto;
+    height: 100%;
+    min-height: 100%;
 }
+
 .container{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-
+    position: sticky;
+    top: 5px;
+}
+main{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
 }
 h1{
     font-size: 4em;
@@ -29,6 +51,9 @@ nav ul li a{
     font-size: 1.5em;
     }
 .main-categories{
+    height: 100%;
+    min-height: 100%;
+    padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: 1fr, .3fr, 1fr, .3fr;
@@ -39,11 +64,12 @@ nav ul li a{
 footer{
    display: flex;
    justify-content: center;
-   background-color: lightblue; 
+   background-color: var(--dark-background);
    position: fixed;
    bottom: 0;
-   width: 100%;
+   width: 85%;
    height: 2.5rem;
+   
 }
 .copyright{
     margin-right: 10px;
@@ -70,14 +96,19 @@ footer{
 
 .category{
     margin: auto;
-    width: 80%
+    width: 100%
 }
 .category h2{
 text-align: center;
 font-size: 50px;
+color: white;
+text-shadow: 2px 2px 4px black;
 }
 
 .main-category {
+    height: 100%;
+    min-height: 100%;
+    background-color: var(--light-background);
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -95,39 +126,54 @@ font-size: 50px;
 }
 .destination{
     margin: auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
     font-size: 20px;
     padding-bottom: 25px;
+    height: 100%;
+    min-height: 100%;
+    background-color: var(--light-background);
+}
+.destination-body{
+    height: 100%;
+    min-height: 100%;
+    background-color: var(--light-background);
 }
 .destination h1{
 font-size: 40px;
     justify-content: center;
+    color: white;
+text-shadow: 2px 2px 4px black;
 }
 .destination img{
     width: 300px;
     height: 300px;
+    border-radius: 300px;
 }
 .reviewForm{
     position: center;
-    width: 350px;
+    width: 100%;
     height: 250px;
-    background: rgba(173, 216, 230, .4);
     margin: auto;
-    margin-bottom: 50px;
+ padding-bottom: 100px;
+    background-color: var(--light-background);
 }
 
 .postedReviews ul{
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
 }
 
 .reviewList{
-    padding: 2em;
-    border: 2px lightblue solid;
+    border-top: 2px var(--dark-background) solid;
+    border-bottom: 2px var(--dark-background) solid;
+
 }
 .review-heading{
     font-style: italic;
-
-
+    color: white;
+    text-shadow: 1px 2px 2px black;
 }
