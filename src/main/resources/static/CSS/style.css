@@ -1,0 +1,30 @@
+*{
+    list-style: none;
+    
+}
+.container{
+    background-image:url(/images/annie-spratt-qyAka7W5uMY-unsplash\ \(2\).jpg);
+    background-size: cover;
+    color: lightblue;
+    text-shadow: 2px 2px 4px black;
+}
+.category{
+  
+    border-radius: 10rem;
+    height: 10rem;
+    width: 10rem;
+}
+.sub-main{
+    font-size: 3em;
+    color: white;
+text-shadow: 2px 2px 4px black;
+}
+.sub-main-hashtag li{
+    font-size: 3em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+.sub-main-hashtag li:hover{
+    color: var(--light-highlight) ;
+   
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/src/main/resources/static/CSS/style.css">
+    <link rel="stylesheet" href="/src/main/resources/static/CSS/layout.css">
+    <title>Destination Reviews</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div th:replace="fragments.html :: nav"></div>
+    </div>
+    <main class = "sub-main">
+        <h2>All Reviews</h2>
+        <section>
+            <ul id="all-reviews-listed">
+                <li>All-Reviews-Individual</li>
+            </ul>
+        </section>
+    </main>
+    <div th:replace="fragments.html :: footer"></div>
+
+</body>
+
+</html>

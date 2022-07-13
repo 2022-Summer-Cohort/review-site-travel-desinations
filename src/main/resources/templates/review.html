@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/layout.css">
+    <link rel="icon" href="/images/airplane.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+    <title>Destination Reviews</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div th:replace="fragments.html :: nav"></div>
+</div>
+</header>
+<main>
+    <section class="destination">
+        <h1 th:text=${destination.destinationName}>Name of Destination</h1>
+                <div class="destination-body">
+                    <img th:src="${destination.imageURL}" th:alt="${destination.altText}">
+                    <br>
+                    <br>
+                    <p th:text="${destination.description}">Description</p>
+                    <br>
+                    <br>
+                    <div class="review-heading">
+                        <span th:text="|Here's what people are saying about ${destination.destinationName}...| "></span>
+                    </div>
+
+                    <div class="postedReviews" >
+                        <ul>
+                            <li th:each="review: ${destination.reviews}" class="reviewList">
+                                <p th:text="${review.stars}"></p>
+                                <p th:text="${review.comment}">text</p>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reviewForm">
+                        <form th:action="'/destination/' + ${destination.destinationName} + '/addReview'"  method="post">
+                            <br>
+                            <br>
+                            <textarea name="comment" id="reviewContent" cols="30" rows="5" placeholder="Enter review here"></textarea>
+                            <br>
+                            <label for="starRating"> Stars: &nbsp</label>
+                            <input type="number" min="0" max="5" name="rating" id="starRating" value="1">
+                            <br>
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                        <br>
+                        <form th:action="'/destination/' + ${destination.destinationName} + '/addHashtag'" method="post">
+                            <label for="newHashtag">Add Hashtag: #</label>
+                            <input type="text" id="newHashtag" name="hashtag">
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+    </section>
+
+</main>
+<div th:replace="fragments.html :: footer"></div>
+</body>
+
+</html>
